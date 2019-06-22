@@ -11,7 +11,7 @@ def stepik_parser_kursi_loop():
         	soup = BeautifulSoup(r.text, 'lxml')
         	title = soup.find('h1', attrs={'class': 'course-promo__header'})
         	leaners = soup.find('div', attrs={'class': 'course-promo-summary__students'})
-        	if title != None:
+        	if title != None and leaners != None:
         		try:
         			text_file.write(url + '\n') #пишем в файл адрес
         			text_file.write(title.get_text() + '\n') #пишем в файл название курса
