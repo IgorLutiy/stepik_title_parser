@@ -8,7 +8,7 @@ def stepik_parser_kursi_loop():
         text_file = open('stepik.txt', 'a')
         for i in range(start, number+1):
         	url = 'https://stepik.org/course/' + str(i) + '/promo'
-                hdr = {'User-Agent': 'Mozilla/5.0'}
+        	hdr = {'User-Agent': 'Mozilla/5.0'}
         	r = requests.get(url, headers=hdr)
         	soup = BeautifulSoup(r.text, 'lxml')
         	title = soup.find('h1', attrs={'class': 'course-promo__header'})
@@ -20,7 +20,7 @@ def stepik_parser_kursi_loop():
         			text_file.write(leaners.get_text().strip() + '\n') #пишем в файл количество учащихся
         		except:
         			print('error')
-                        time.sleep(1)
+        		time.sleep(1)
         	if i%100 == 0: 
         		print(i) #смотрим, сколько урлов уже прошло, выводится число кратное 100
         return True
