@@ -5,7 +5,7 @@ import time
 def stepik_parser_kursi_loop():
         start = int(input('Введите начальное число: ')) #начальное число в адресе, с которого будем начинать парсинг
         number = int(input('Введите конечное число: ')) #конечное число в адресе, с которого будем начинать парсинг
-        text_file = open('stepik.txt', 'a')
+        text_file = open('stepik.txt', 'a', encoding='utf-8')
         for i in range(start, number+1):
         	url = 'https://stepik.org/course/' + str(i) + '/promo'
         	hdr = {'User-Agent': 'Mozilla/5.0'}
